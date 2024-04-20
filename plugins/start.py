@@ -92,6 +92,15 @@ async def start_command(client: Client, message: Message):
                 await SD.delete()
             except:
                 pass
+                SD = await message.reply_text("Baka! Files Will Be Deleted After 5 Minute.. Save Them To Saved Messages Now !! Immediately !!")
+        await asyncio.sleep(SECONDS)
+
+        for snt_msg in snt_msgs:
+            try:
+                await snt_msg.delete()
+                await SD.delete()
+            except:
+                pass
         return
     else:
         reply_markup = InlineKeyboardMarkup(
