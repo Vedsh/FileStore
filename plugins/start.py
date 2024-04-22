@@ -17,7 +17,7 @@ from database.database import add_user, del_user, full_userbase, present_user
 
 """add time im seconds for waitingwaiting before delete 
 1min=60, 2min=60×2=120, 5min=60×5=300"""
-SECONDS = int(os.getenv("SECONDS", "60"))
+SECONDS = int(os.getenv("SECONDS", "120"))
 
 
 @Bot.on_message(filters.command('start') & filters.private & subscribed)
@@ -89,7 +89,7 @@ async def start_command(client: Client, message: Message):
                 snt_msgs.append(snt_msg)
             except:
                 pass
-        SD = await message.reply_text("Baka! Files Will Be Deleted After 60 Seconds.. Before Download Save Them To Saved Messages Now or Somewhere Else Then Download The Files !! Immediately !!")
+        SD = await message.reply_text("Baka! Files Will Be Deleted After 2 Minutes.. Before Download Save Them To Saved Messages Now or Somewhere Else Then Download The Files !! NOW !!")
         await asyncio.sleep(SECONDS)
 
         for snt_msg in snt_msgs:
